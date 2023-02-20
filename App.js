@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }) => {
   const [newNote, setNewNote] = useState('');
   
   useEffect(() => {
-    // Load notes from local storage on mount
+    // Henter noter fra local storage
     AsyncStorage.getItem('notes').then(data => {
       if (data) {
         setNotes(JSON.parse(data));
@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const handlePressNote = note => {
-    // Navigate to note details screen
+    // navigerer til note details
     navigation.navigate('NoteDetails', { note });
   };
 
